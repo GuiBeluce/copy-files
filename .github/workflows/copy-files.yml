@@ -3,7 +3,7 @@ name: Copiar arquivos
 on:
   push:
     branches:
-      - develop
+      - develop 
 
 permissions:
   pull-requests: write
