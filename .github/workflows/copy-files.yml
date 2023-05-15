@@ -19,3 +19,17 @@ jobs:
           cp -R deployDev/novo2.txt packageRelease/
           cp -fR deployDev/novo2.txt packageRelease/             
           cp -uR deployDev/novo2.txt packageRelease/
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Criar artefato
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: deployDev/*.*
+
+      - name: Baixar artefato
+        uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
+          path: packageRelease/
