@@ -45,8 +45,11 @@ jobs:
         run: git status
       - name: stage changed files
         run: |
+          git config --global user.email "awsbeluce@gmail.com"
+          git config --global user.name "GuiBeluce"  
           git add .
           git commit -m 'download of files'
+          git push
       
       - name: outher identification
         if: ${{ github.actor == 'dependabot[bot]' }}
