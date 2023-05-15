@@ -40,6 +40,12 @@ jobs:
         run: git status
       - name: stage changed files
         run: git add .
+      
+      - name: user identification
+        run: |
+          git config --global user.email "awsbeluce@gmail.com"
+          git config --global user.name "GuiBeluce"  
+        
       - name: commit changed files
         run: git commit -m "Auto updating TODO.txt"
       - name: fetch from master
