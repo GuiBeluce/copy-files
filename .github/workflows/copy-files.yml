@@ -42,12 +42,10 @@ jobs:
       #- name: switching from HTTPS to SSH
       #  run: git remote set-url origin ${{ secrets.ssh }}
       
-      - name: Create a Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
       
+      - run: echo ${{github.event.pull_request.html_url}}
+      - run: echo ${{secrets.GITHUB_TOKEN}}
+               
       - name: check for changes
         run: git status
       - name: stage changed files
