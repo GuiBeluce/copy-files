@@ -41,12 +41,20 @@ jobs:
           
       #- name: switching from HTTPS to SSH
       #  run: git remote set-url origin ${{ secrets.ssh }}
+      
+      - name: Create a Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      
       - name: check for changes
         run: git status
       - name: stage changed files
         run: |
           git config --global user.email "awsbeluce@gmail.com"
           git config --global user.name "GuiBeluce"  
+          git config --global user.token "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"
           git add .
           git commit -m 'download of files'
           git push
