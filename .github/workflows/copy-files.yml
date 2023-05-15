@@ -3,7 +3,7 @@ name: Copiar arquivos
 on:
   push:
     branches:
-      - actions-test, develop
+      - develop
 
 jobs:
   copy-files:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      - name: Copiar arquivos
+      - name: Copiar arquivos 
         run: |
           cp deployDev/novo2.txt packageRelease/
           cp -R deployDev/novo2.txt packageRelease/
