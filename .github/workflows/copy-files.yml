@@ -3,7 +3,7 @@ name: Copiar arquivos
 on:
   push:
     branches:
-      - actions-test, develop
+      - develop
 
 jobs:
   copy-files:
