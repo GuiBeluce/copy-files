@@ -1,0 +1,21 @@
+name: Copiar arquivos
+
+on:
+  push:
+    branches:
+      - actions-test, develop
+
+jobs:
+  copy-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Copiar arquivos
+        run: |
+          cp deployDev/novo2.txt packageRelease/
+          cp -R deployDev/novo2.txt packageRelease/
+          cp -fR deployDev/novo2.txt packageRelease/             
+          cp -uR deployDev/novo2.txt packageRelease/
